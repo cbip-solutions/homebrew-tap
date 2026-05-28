@@ -3,9 +3,9 @@
 class Hades < Formula
   desc "Autonomous agentic development orchestrator"
   homepage "https://github.com/cbip-solutions/hades-system"
-  url "https://github.com/cbip-solutions/hades-system/archive/refs/tags/v1.0.2.tar.gz"
-  version "1.0.2"
-  sha256 "c8aaac07c8e7cd9baab69d3bb3b0499efa2f7c347caab5e4616bcb9dfb00d0bf"
+  url "https://github.com/cbip-solutions/hades-system/archive/refs/tags/v1.0.3.tar.gz"
+  version "1.0.3"
+  sha256 "7c5bb7dfedc0bf9cfb80011fd239391a126770af239696a008cad62e9ae1f549"
   license "MIT"
   head "https://github.com/cbip-solutions/hades-system.git", branch: "main"
 
@@ -42,9 +42,14 @@ class Hades < Formula
       HADES requires Hermes Agent (MIT) as its substrate. Hermes Agent is
       installed automatically as a required dependency.
 
+      Verify Hermes Agent first:
+        hermes --version
+
       Link the Hermes plugin after install:
         mkdir -p ~/.hermes/plugins
         ln -sfn #{opt_pkgshare}/hades ~/.hermes/plugins/hades
+
+      Restart Hermes or refresh its plugin registry if it was already running.
 
       Verify local readiness:
         hades doctor hermes
