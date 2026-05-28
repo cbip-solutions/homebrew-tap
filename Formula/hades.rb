@@ -3,9 +3,9 @@
 class Hades < Formula
   desc "Autonomous agentic development orchestrator"
   homepage "https://github.com/cbip-solutions/hades-system"
-  url "https://github.com/cbip-solutions/hades-system/archive/refs/tags/v1.0.1.tar.gz"
-  version "1.0.1"
-  sha256 "f5b108a4627e3575c3964c60d9334a725e9bfc287a9b2b756c942058be5d7b0a"
+  url "https://github.com/cbip-solutions/hades-system/archive/refs/tags/v1.0.2.tar.gz"
+  version "1.0.2"
+  sha256 "c8aaac07c8e7cd9baab69d3bb3b0499efa2f7c347caab5e4616bcb9dfb00d0bf"
   license "MIT"
   head "https://github.com/cbip-solutions/hades-system.git", branch: "main"
 
@@ -53,10 +53,17 @@ class Hades < Formula
       HADES uses Caronte, its in-tree code-graph engine. No external
       code-graph service is required.
 
-      Configure providers with:
-        hades providers add anthropic --key $ANTHROPIC_API_KEY
-        hades providers add gemini --key $GEMINI_API_KEY
-        hades providers add openrouter --key $OPENROUTER_API_KEY
+      Configure provider rosters with:
+        hades providers init
+        hades providers add openrouter --type openai-compat --endpoint https://openrouter.ai/api --model deepseek/deepseek-chat --family deepseek --keychain hades/openrouter
+
+      Set provider credentials with environment variables on Linux/source
+      installs before starting the daemon:
+        export HADES_KEYCHAIN_OPENROUTER="$OPENROUTER_API_KEY"
+        export HADES_KEYCHAIN_GOOGLE_AI="$GEMINI_API_KEY"
+
+      On macOS, environment variables work too; alternatively run:
+        hades providers rotate openrouter
 
       License: MIT. Commercial use is permitted by the project license.
     EOS
