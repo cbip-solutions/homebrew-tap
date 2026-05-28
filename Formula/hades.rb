@@ -4,7 +4,7 @@ class Hades < Formula
   desc "Local-first agentic development orchestrator"
   homepage "https://github.com/cbip-solutions/hades-system"
   url "https://github.com/cbip-solutions/hades-system/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "54ba1c0578e099e8ce0555e951379f610c454b87936e2cb60c42101532e36563"
+  sha256 "76d0dd0c14f7efdd4fdd41b471125e7ad45982e677f2373902d7fcea4fc5e0d4"
   license "MIT"
   head "https://github.com/cbip-solutions/hades-system.git", branch: "main"
 
